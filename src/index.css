@@ -122,7 +122,7 @@ button{
   font-size: .9rem;
 }
 .ledgerCont .askList {
-  background: #e0404025;
+  background: #e0404011;
   color: var(--rd);
 }
 .ledgerCont .bestPrice {
@@ -130,10 +130,9 @@ button{
 
   padding-block: 2%;
   font-size: 1.1rem;
-  background: var(--lb);
 }
 .ledgerCont .bidList {
-  background: #24ae6425;
+  background: #24ae6411;
   color: var(--mg);
 }
 
