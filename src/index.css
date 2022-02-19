@@ -2,6 +2,8 @@
   --lb: rgba(30, 30, 30, 1);
   --llb: rgba(60, 60, 60, 1);
   --mustard: #F7A600;
+  --mg: #24ae64;
+  --rd: #e04040;
 }
 ::selection {
   color: white;
@@ -61,11 +63,11 @@ hr {
 
 main{
   display: grid;
-  grid-template-rows: .1fr .1fr 1fr .7fr .1fr;
-  grid-template-columns: 1fr repeat(2, .51fr);
+  grid-template-rows: .1fr .1fr 1fr /*.7fr .1fr;*/;
+  grid-template-columns: 1fr .51fr /*repeat(2, .51fr)*/;
   gap: .2%;
 
-  height: 1000px;
+  height: 100vh;
 }
 button{
   cursor: pointer;
@@ -74,6 +76,14 @@ button{
   background: var(--lb);
   border-radius: 1px;
   color: white;
+}
+.containerHsec {
+  padding-inline: 4%;
+  padding-block: 3%;
+}
+.containerH {
+  padding-inline: 2%;
+  border-inline-start: solid var(--mustard);
 }
 /* ++++++++++++++++++++++++++++++++ */
 .navCont{
@@ -86,6 +96,49 @@ button{
 }
 
 /* ++++++++++++++++++++++++++++++++ */
+.ledgerCont{
+  grid-row: 3 / 4;
+  grid-column: 2 / 3;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.ledgerCont > .table {
+  display: flex;
+  flex-direction: column;
+  font-size: .8rem;
+}
+
+
+.ledgerCont > .table .tr {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  margin-block: 1% 0;
+  text-align: center;
+}
+.ledgerCont > .table .td {
+  font-size: .9rem;
+}
+.ledgerCont .askList {
+  background: #e0404025;
+  color: var(--rd);
+}
+.ledgerCont .bestPrice {
+  grid-column: 1/span 3;
+
+  padding-block: 2%;
+  font-size: 1.1rem;
+  background: var(--lb);
+}
+.ledgerCont .bidList {
+  background: #24ae6425;
+  color: var(--mg);
+}
+
+
+/* ++++++++++++++++++++++++++++++++ */
 .spotCont{
   grid-column: 3 / 4;
   grid-row: 3 / span 2;
@@ -96,11 +149,6 @@ button{
 .spotCont > section {
   padding-inline: 4%;
   padding-block: 3%;
-}
-
-.spotCont .controlsheading {
-  padding-inline: 2%;
-  border-inline-start: solid var(--mustard);
 }
 
 .spotCont .bsSec {
@@ -116,11 +164,11 @@ button{
   padding: 2%;
 }
 .spotCont .buybs{
-  background: #24ae64;
+  background: var(--mg);
 }
 .spotCont .sellbs{
   color: inherit;
-  background: #e04040;
+  background: var(--rd);
 }
 
 /* ++++++++++++++++++++++++++++++++ */

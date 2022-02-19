@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import {Ledger} from './ledger.js';
 import {Controls} from './spot.js';
 
-const contClasses = ['navCont', 'currentCoinCont', 'chartCont', 'ledgerCont', 'tradeCont', 'footCont'];
+const contClasses = ['navCont', 'currentCoinCont', 'chartCont', /*'tradeCont', 'footCont'*/];
 function Containers(props) {
   return(
     <div className={'containers '+props.className}></div>
@@ -15,7 +16,8 @@ function App(props) {
       {
         contClasses.map(z=> <Containers key={z} className={z} />)
       }
-      <Controls />
+      <Ledger />
+      {/*<Controls />*/}
     </main>
   );
 }
