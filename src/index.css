@@ -1,13 +1,135 @@
-body {
+:root{
+  --lb: rgba(30, 30, 30, 1);
+  --llb: rgba(60, 60, 60, 1);
+  --mustard: #F7A600;
+}
+::selection {
+  color: white;
+  background: grey;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
   margin: 0;
+}
+html, body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',"Century Gothic", "Verdana", Futura,
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+img, picture, video, canvas, svg {
+  display: block;
+  max-inline-size: 100%;
+  object-fit: cover;
+  block-size: auto;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+#root, #__next {
+  isolation: isolate;
+  background: black;
+}
+canvas{
+  -webkit-transform3d: translate(0,0,0);
+  -moz-transform3d: translate(0,0,0);
+  transform3d: translate(0,0,0);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+hr {
+  border: none;
+  border-bottom: .5px solid var(--llb);
+}
+
+/* ++++++++++++++++++ css-reset +++++++++++++++++ */
+
+main{
+  display: grid;
+  grid-template-rows: .1fr .1fr 1fr .7fr .1fr;
+  grid-template-columns: 1fr repeat(2, .51fr);
+  gap: .2%;
+
+  height: 1000px;
+}
+button{
+  cursor: pointer;
+}
+.containers{
+  background: var(--lb);
+  border-radius: 1px;
+  color: white;
+}
+/* ++++++++++++++++++++++++++++++++ */
+.navCont{
+  grid-column: 1 / span 4;
+}
+
+/* ++++++++++++++++++++++++++++++++ */
+.currentCoinCont{
+  grid-column: 1 / span 4;
+}
+
+/* ++++++++++++++++++++++++++++++++ */
+.spotCont{
+  grid-column: 3 / 4;
+  grid-row: 3 / span 2;
+
+  display: flex;
+  flex-direction: column;
+}
+.spotCont > section {
+  padding-inline: 4%;
+  padding-block: 3%;
+}
+
+.spotCont .controlsheading {
+  padding-inline: 2%;
+  border-inline-start: solid var(--mustard);
+}
+
+.spotCont .bsSec {
+  display: flex;
+  gap: 5%;
+}
+.spotCont .bs {
+  background: var(--llb);
+  border: none;
+  color: inherit;
+  border-radius: 5px;
+  width: 100%;
+  padding: 2%;
+}
+.spotCont .buybs{
+  background: #24ae64;
+}
+.spotCont .sellbs{
+  color: inherit;
+  background: #e04040;
+}
+
+/* ++++++++++++++++++++++++++++++++ */
+.tradeCont{
+  grid-row: 4 / 5;
+  grid-column: 1 / span 2;
+}
+
+/* ++++++++++++++++++++++++++++++++ */
+.footCont{
+  grid-column: 1 / span 4;
 }
