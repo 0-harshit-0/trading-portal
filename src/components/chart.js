@@ -22,9 +22,11 @@ function scripts() {
     });
   `;
   const script = document.createElement('script');
-  script.defer = true;
+  script.defer = "true";
   script.innerHTML = st;
-  document.body.appendChild(script);
+  window.onload = () => {
+    document.body.appendChild(script);
+  }
 }
 function Chart(props) {
   useScript('https://s3.tradingview.com/tv.js');
