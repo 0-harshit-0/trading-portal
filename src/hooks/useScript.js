@@ -6,8 +6,7 @@ const useScript = url => {
 
     script.src = url;
     script.async = true;
-    script.SameSite = "None";
-
+    
     document.head.appendChild(script);
 
     return () => {
