@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React/*, { useState }*/ from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import {Chart} from './components/chart.js';
 import {Ledger} from './components/ledger.js';
-/*import {Controls} from './spot.js';*/
+import {Controls} from './components/spot.js';
 
-const contClasses = ['navCont', 'currentCoinCont', /*'tradeCont', 'footCont'*/];
+const contClasses = ['navCont', 'currentCoinCont', 'tradeCont', 'footCont'];
 function Containers(props) {
   return(
     <div className={'containers '+props.className}></div>
@@ -20,7 +20,7 @@ function App(props) {
       }
       <Chart />
       <Ledger />
-      {/*<Controls />*/}
+      <Controls />
     </main>
     </>
   );

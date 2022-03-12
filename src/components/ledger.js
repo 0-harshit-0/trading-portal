@@ -11,6 +11,7 @@ async function getBestData() {
   let json = await res.json();
   return json;
 }
+/* -------utility fun--------*/
 
 function Data(props) {
   return (
@@ -53,7 +54,7 @@ function Ledger(props) {
         setbest({class:"bidList", p:data.price});
       }
       tempBest = parseFloat(best.p);
-    }, 1000*5);
+    }, 10000000*5);
     // Specify how to clean up after this effect:
     return function cleanup() {
       clearInterval(inter);

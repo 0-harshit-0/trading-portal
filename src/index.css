@@ -59,15 +59,15 @@ hr {
   border-bottom: .5px solid var(--llb);
 }
 
-/* ++++++++++++++++++ css-reset +++++++++++++++++ */
+/* ++++++++++++++++++ css-reset over +++++++++++++++++ */
 
 main{
   display: grid;
-  grid-template-rows: .1fr .1fr 1fr /*.7fr .1fr;*/;
-  grid-template-columns: 1fr .51fr /*repeat(2, .51fr)*/;
+  grid-template-rows: .1fr .1fr 1fr .7fr .1fr;;
+  grid-template-columns: 1fr repeat(2, .45fr);
   gap: .2%;
 
-  height: 100vh;
+  height: 150vh;
 }
 button{
   cursor: pointer;
@@ -85,18 +85,24 @@ button{
   padding-inline: 2%;
   border-inline-start: solid var(--mustard);
 }
-/* ++++++++++++++++++++++++++++++++ */
-.navCont{
+/* +++++++++++++++ navigation bar top +++++++++++++++++ */
+.navCont {
   grid-column: 1 / span 4;
 }
 
-/* ++++++++++++++++++++++++++++++++ */
-.currentCoinCont{
+/* ++++++++++++++ current coin bar below top ++++++++++++++++++ */
+.currentCoinCont {
   grid-column: 1 / span 4;
 }
 
-/* ++++++++++++++++++++++++++++++++ */
-.ledgerCont{
+/* +++++++++++++ char container below current +++++++++++++++++++ */
+.chartCont {
+  grid-row: 3 / 4;
+  grid-column: 1 / 2;
+}
+
+/* +++++++++++++ ledger besides chart +++++++++++++++++++ */
+.ledgerCont {
   grid-row: 3 / 4;
   grid-column: 2 / 3;
 
@@ -137,7 +143,7 @@ button{
 }
 
 
-/* ++++++++++++++++++++++++++++++++ */
+/* +++++++++++++++ buy and sell besides ledger +++++++++++++++++ */
 .spotCont{
   grid-column: 3 / 4;
   grid-row: 3 / span 2;
@@ -152,21 +158,21 @@ button{
 
 .spotCont .bsSec {
   display: flex;
-  gap: 5%;
+  justify-content: space-around;
 }
 .spotCont .bs {
   background: var(--llb);
   border: none;
   color: inherit;
   border-radius: 5px;
-  width: 100%;
-  padding: 2%;
+  width: 40%;
+  padding-block: 1.5%;
+  padding-inline: 2%;
 }
-.spotCont .buybs{
+.spotCont .buybs {
   background: var(--mg);
 }
-.spotCont .sellbs{
-  color: inherit;
+.spotCont .sellbs {
   background: var(--rd);
 }
 
